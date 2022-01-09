@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title class="background">
+      Botones de emergencia
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" class="valign-wrapper2">
+
+  <ion-list class="valign-wrapper4">
+    <br>
+    <ion-button expand="block" shape="round" color="warning" size="large" (click)="reportes('Ambulance')"
+      href="tel:131">Ambulancia</ion-button>
+    <br>
+    <ion-button expand="block" shape="round" color="success" size="large" (click)="reportes('Police')" 
+      href="tel:133"> Carabineros</ion-button>
+    <br>
+    <ion-button expand="block" shape="round" color="danger" size="large" (click)="reportes('Firefighter')"
+      href="tel:132">Bomberos</ion-button>
+    <br>
+    <br>
+    <ion-button expand="block" shape="round" color="dark" size="large" (click)="reportes('Office1')"
+      href="tel:+56990942357">HS-Numero N°1</ion-button>
+    <br>
+    <ion-button expand="block" shape="round" color="dark" size="large" (click)="reportes('Office2')"
+      href="tel:+56990942357">HS-Numero N°2</ion-button>
+    <br>
+  </ion-list>
+
+</ion-content>

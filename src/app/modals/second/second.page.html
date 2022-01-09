@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Guardar Visita</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="valign-wrapper2">
+  <form lass="valign-wrapper4" [formGroup]="registerVisitorForm" (ngSubmit)="registerVisitor()">
+  <ion-grid >
+    <ion-row>
+      <ion-col>
+        <ion-item class="wrapper2">
+          <ion-label>Ingrese Nombre y Apellido</ion-label>
+        </ion-item>
+        
+        <ion-item class="wrapper2">
+          <ion-input placeholder="Ej: Juan" formControlName="name"></ion-input>
+        </ion-item>
+        
+        <ion-item class="wrapper2">
+          <ion-label>Ingrese Patente (opcional)</ion-label>
+        </ion-item>
+        
+        <ion-item class="wrapper2">
+          <ion-input placeholder="Ej: GKYY11" formControlName="patent"></ion-input>
+        </ion-item>
+        
+        <ion-item class="wrapper2">
+          <ion-label>Ingrese Rut</ion-label>
+        </ion-item>
+        
+        <ion-item class="wrapper2"> 
+          <ion-input placeholder="Ej: 11.111.111-0" formControlName="rut"></ion-input>
+        </ion-item>
+
+        <ion-item class="wrapper2">
+          <ion-label>Ingrese Hora</ion-label>
+        </ion-item>
+
+        <ion-item class="wrapper2">
+          <ion-datetime displayFormat="HH:mm" placeholder="Ej: 16:30" formControlName="in"></ion-datetime>
+        </ion-item>
+        <br>
+        <ion-button color="primary" type="submit" size="large" expand="block" shape="round" (click)="closeModal()">Guardar Visita</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  </form>
+</ion-content>

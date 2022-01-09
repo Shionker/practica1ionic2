@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title>
+      Inicio
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="valign-wrapper2">
+  <ion-fab size="large" vertical="bottom" horizontal="end" slot="fixed">
+    <!-- <ion-fab-button color="dark" (click)='finalShift()'> -->
+      <ion-fab-button color="dark" (click)='presentAlert()'>
+      <ion-icon name="log-out"></ion-icon>
+      finish
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab size="large" vertical="bottom" horizontal="start" slot="fixed">
+  <!--   <ion-fab-button color="dark" (click)='initShift()'> -->
+      <ion-fab-button color="dark" (click)='presentAlert2()'>
+      <ion-icon name="stopwatch"></ion-icon>
+      start
+    </ion-fab-button>
+  </ion-fab>
+  <br>
+
+  <ion-item class="wrapper2">
+    <ion-img src="\assets\imgs\logo.png"></ion-img>
+  </ion-item>
+  <br><br>
+  
+  <ion-button size="large" expand="block" (click)="openModal()" color="medium">ver rondas de la semana</ion-button>
+  <br><br>
+  
+
+  <ion-item color="medium">
+    <ion-label>
+      Elegir turno a iniciar:
+    </ion-label>
+    <ion-select value="brown" okText="Okay" cancelText="Dismiss" class="ion-text-wrap" (ionChange)='saveId()'
+      [(ngModel)]='shiftId'>
+
+      <ion-select-option class="ion-text-wrap" [value]="shift.shiftId + '$' +shift.client" *ngFor="let shift of shifts">
+        {{shift.date}}
+      </ion-select-option>
+    </ion-select>
+
+  </ion-item>
+  <br><br>
+
+  <ion-button (click)='notification()' shape="round" size="large" expand="block">Registrar nuevo Incidente</ion-button>
+  <br><br>
+</ion-content>

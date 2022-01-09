@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de rondas</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="valign-wrapper2">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" *ngFor="let shift of shifts">
+        <ion-card (click)="openUrl(shift.shiftPlace)">
+          <!-- <ion-img src="https://www.google.cl/maps/place/bellavista+52+providencia"></ion-img> -->
+          <iframe class="map" frameborder="0"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-70.63887387514116%2C-33.43582853942359%2C-70.63361674547197%2C-33.433831941499015&amp;layer=mapnik"></iframe>
+          <ion-card-header>
+            <ion-card-title>
+              <ion-icon name="location-outline" class="ion-margin-end"></ion-icon>{{ shift.shiftPlace }}
+            </ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-icon name="calendar-outline" class="ion-margin-end"></ion-icon>
+            <ion-label class="ion-margin-end">{{shift.date}} </ion-label>
+            <ion-icon name="time-outline" class="ion-margin-end"></ion-icon>
+            <ion-label class="ion-margin-end">{{shift.start}} </ion-label>
+            <ion-icon name="time-outline" class="ion-margin-end"></ion-icon>
+            <ion-label class="ion-margin-end">{{shift.finish}} </ion-label>
+          </ion-card-content>
+        </ion-card>
+
+        <!-- <ion-item class="ion-margin-vertical" *ngFor="let shift of shifts" (click)="openUrl(shift.shiftPlace)">
+          <ion-icon name="calendar-outline" class="ion-margin-end"></ion-icon>
+          <ion-label>{{ shift.date }}</ion-label>
+          <ion-icon name="time-outline" class="ion-margin-end"></ion-icon>
+          <ion-label>{{ shift.start }}</ion-label>
+          <ion-icon name="time-outline" class="ion-margin-end"></ion-icon>
+          <ion-label>{{ shift.finish }}</ion-label>
+        </ion-item> -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

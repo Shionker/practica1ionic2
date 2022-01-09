@@ -1,0 +1,137 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Registro-incidente
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <h2>
+    Registrar inscidente
+  </h2>
+  <ion-list> 
+    <ion-item>
+     <ion-label> Sin Novedad </ion-label>
+     <ion-checkbox></ion-checkbox>
+    </ion-item> 
+    <ion-item>
+      <ion-label> Persona Sospechosa </ion-label>
+      <ion-checkbox></ion-checkbox>
+    </ion-item>
+   <ion-item>
+      <ion-label> Incendio </ion-label>
+      <ion-checkbox></ion-checkbox>
+   </ion-item>
+    <ion-item>
+      <ion-label> Otro </ion-label>
+      <ion-input></ion-input>
+      <ion-checkbox></ion-checkbox>
+    </ion-item [routerLink]="['tab1']">
+   <ion-button color="primary">enviar</ion-button>
+  </ion-list>
+</ion-content> -->
+
+
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title>
+      Registro-incidente
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink='/tabs/tab1'>
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="valign-wrapper2">
+  <br>
+  <ion-title size="large"> </ion-title>
+
+ <!--  <ion-item color="primary" shape="round">
+    <ion-label>INICIAR TURNO</ion-label>
+    <ion-toggle (click)=Notification() color="dark"></ion-toggle>
+  </ion-item> -->
+ 
+
+  
+  
+  <!-- <ion-form [formGroup]="registerForm" (ngSubmit)="register()"> -->
+    <form class="valign-wrapper4" [formGroup]="registerForm" (ngSubmit)="register()">
+
+      <!-- <ion-item color="medium" >
+        <ion-label>
+          Elegir turno a iniciar:
+        </ion-label>
+        <ion-select value="brown" okText="Okay" cancelText="Dismiss" *ngFor="let shift of shifts$ | async"
+        <ion-select value="brown" okText="Okay" cancelText="Dismiss" class="ion-text-wrap" formControlName="shiftId">
+         [(ngModel)]="shifts$">
+          <ion-select-option class="ion-text-wrap" [value]="shift.shiftId" *ngFor="let shift of shifts" >
+            {{shift.date}}
+          </ion-select-option>
+          <ion-select-option hidden>
+            {{shift.date}}
+          {{shift.dates+' '+shift.start+' '+shift.finish}}
+        </ion-select-option>
+        </ion-select>
+      </ion-item> -->
+      <br><br>
+    <ion-list >
+      
+        <ion-radio-group value="Sin novedad" formControlName="title" >
+          <ion-list-header>
+            <ion-label>Registrar Novedades</ion-label>
+          </ion-list-header>
+
+          <ion-item >
+            <ion-label>Sin Novedad</ion-label>
+            <ion-radio slot="start" type="radio" value="Sin Novedad"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Persona Sospechosa</ion-label>
+            <ion-radio slot="start" type="radio" value="Persona Sospechosa"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Incendio</ion-label>
+            <ion-radio slot="start" type="radio" value="Incendio"></ion-radio>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label>Otro</ion-label>
+            <ion-radio slot="start" value="Otro"></ion-radio>
+            <ion-textarea placeholder="ingrese más información" formControlName="description"></ion-textarea>
+          </ion-item>
+
+          </ion-radio-group>
+            <ion-radio-group value="{{coordinate?.latitude }},{{ coordinate?.longitude }}" formControlName="location" >
+          </ion-radio-group>
+
+          <ion-item>
+            <ion-label>Geoloc</ion-label>
+            <ion-card-header>
+              <ion-button size="small" (click)="getCurrentCoordinate()">
+                Current Coordinate
+              </ion-button>
+            </ion-card-header>
+            <ion-card-content>
+              Lat: {{coordinate?.latitude }}
+              Long:{{ coordinate?.longitude }}
+            </ion-card-content>
+          </ion-item>
+          
+        </ion-radio-group>
+      <br><br>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button color="primary" type="submit" expand="block" shape="round" size="large">Registrar</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-list>
+
+  </form>
+</ion-content>

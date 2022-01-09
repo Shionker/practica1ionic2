@@ -1,0 +1,111 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title>
+      Listado Visitas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="valign-wrapper2">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="chevron-down-circle-outline" pullingText="Pull to refresh"
+      refreshingSpinner="circles" refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-header>
+    <ion-title>
+      <br><br>
+    </ion-title>
+  </ion-header>
+  <ion-list class="valign-wrapper4">
+    <ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4">
+            <div>
+            <ion-label>NOMBRE </ion-label>
+          </div>
+        </ion-col>
+        <ion-col size="4">
+          <div>
+            <ion-label>PATENTE</ion-label>
+          </div>
+        </ion-col>
+        <ion-col size="4">
+          <div>
+            <ion-label>RUT</ion-label>
+          </div>
+        </ion-col>
+        <ion-col size="4">
+              <div>
+                <ion-label>ENTRADA</ion-label>
+              </div>
+        </ion-col>
+        <ion-col size="4">
+            <div>
+              <ion-label>SALIDA</ion-label>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item *ngFor="let visita of visitas">
+      <div (click)="saveVisitData(visita.visitId, visita.shiftShiftId, visita.name)">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="4">
+              <div>
+                <ion-label (click)="openModal2()">
+                  {{visita.name}}
+                </ion-label>
+              </div>
+            </ion-col>
+            <ion-col size="4" >
+              <div>
+                <ion-label (click)="openModal2()">
+                  {{visita.patent}}
+                </ion-label>
+              </div>
+            </ion-col>
+            <ion-col size="4">
+              <div>
+                <ion-label (click)="openModal2()">
+                  {{visita.rut}}
+                </ion-label>
+              </div>
+            </ion-col>
+            <ion-col size="4">
+              <div>
+                <ion-label (click)="openModal2()">
+                  {{visita.in}}
+                </ion-label>
+              </div>
+            </ion-col>
+            <ion-col size="4">
+              <div>
+                <ion-label (click)="openModal2()">
+                  {{visita.out}}
+                </ion-label>
+              </div>
+            </ion-col>
+            <!-- {{visita.visitId}} -->
+            <!-- {{visita.shiftShiftId}} -->
+            <!-- <ion-label (click)=""> -->
+            <!--  {{visita.out}} -->
+
+            <!-- </ion-label>
+              
+            </ion-col> -->
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab size="large" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add" (click)="openModal()"></ion-icon>
+    </ion-fab-button>
+
+  </ion-fab>
+</ion-content>
