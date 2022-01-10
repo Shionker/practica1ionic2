@@ -11,7 +11,7 @@
     <!-- <ion-fab-button color="dark" (click)='finalShift()'> -->
       <ion-fab-button color="dark" (click)='presentAlert()'>
       <ion-icon name="log-out"></ion-icon>
-      finish
+      Terminar
     </ion-fab-button>
   </ion-fab>
 
@@ -19,7 +19,7 @@
   <!--   <ion-fab-button color="dark" (click)='initShift()'> -->
       <ion-fab-button color="dark" (click)='presentAlert2()'>
       <ion-icon name="stopwatch"></ion-icon>
-      start
+      Iniciar
     </ion-fab-button>
   </ion-fab>
   <br>
@@ -37,7 +37,7 @@
     <ion-label>
       Elegir turno a iniciar:
     </ion-label>
-    <ion-select value="brown" okText="Okay" cancelText="Dismiss" class="ion-text-wrap" (ionChange)='saveId()'
+    <ion-select value="brown" okText="Aceptar" cancelText="Cancelar" class="ion-text-wrap" (ionChange)='saveId()'
       [(ngModel)]='shiftId'>
 
       <ion-select-option class="ion-text-wrap" [value]="shift.shiftId + '$' +shift.client" *ngFor="let shift of shifts">

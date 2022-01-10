@@ -13,10 +13,11 @@
     <ion-row>
       <ion-col size="12" *ngFor="let shift of shifts">
         <ion-card (click)="openUrl(shift.shiftPlace)">
-          <!-- <ion-img src="https://www.google.cl/maps/place/bellavista+52+providencia"></ion-img> -->
+          <!-- <ion-img src="https://www.google.cl/maps/place/bellavista+52+providencia"></ion-img> 
           <iframe class="map" frameborder="0"
             src="https://www.openstreetmap.org/export/embed.html?bbox=-70.63887387514116%2C-33.43582853942359%2C-70.63361674547197%2C-33.433831941499015&amp;layer=mapnik"></iframe>
-          <ion-card-header>
+          -->
+            <ion-card-header>
             <ion-card-title>
               <ion-icon name="location-outline" class="ion-margin-end"></ion-icon>{{ shift.shiftPlace }}
             </ion-card-title>

@@ -105,23 +105,14 @@
             <ion-textarea placeholder="ingrese más información" formControlName="description"></ion-textarea>
           </ion-item>
 
-          </ion-radio-group>
-            <ion-radio-group value="{{coordinate?.latitude }},{{ coordinate?.longitude }}" formControlName="location" >
-          </ion-radio-group>
+          
 
           <ion-item>
-            <ion-label>Geoloc</ion-label>
-            <ion-card-header>
-              <ion-button size="small" (click)="getCurrentCoordinate()">
-                Current Coordinate
-              </ion-button>
-            </ion-card-header>
-            <ion-card-content>
-              Lat: {{coordinate?.latitude }}
-              Long:{{ coordinate?.longitude }}
-            </ion-card-content>
+            <ion-label>Latitud: {{coordinate?.latitude }}  
+              Longitud:{{ coordinate?.longitude }}</ion-label>
           </ion-item>
-          
+        </ion-radio-group>
+          <ion-radio-group value="{{coordinate?.latitude }},{{ coordinate?.longitude }}" formControlName="location" >
         </ion-radio-group>
       <br><br>
       <ion-grid>

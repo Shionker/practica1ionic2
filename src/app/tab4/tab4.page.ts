@@ -42,6 +42,9 @@ export class Tab4Page {
     private zone: NgZone
   ) {
 
+
+    this.getCurrentCoordinate()
+
     new Promise((resolve, reject) => {
       this.guard = this.auth.guardData()
      /*  console.table(this.guard) */
@@ -108,7 +111,8 @@ export class Tab4Page {
     return this.formBuilder.group({
       title: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
-      shiftId: [this.guard.shiftId, Validators.required]
+      shiftId: [this.guard.shiftId, Validators.required],
+      location: new FormControl('', Validators.required),
     })
   }
   async presentToast(message: string) {
